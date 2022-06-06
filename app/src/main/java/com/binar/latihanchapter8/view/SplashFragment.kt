@@ -2,11 +2,10 @@ package com.binar.latihanchapter8.view
 
 import android.os.Bundle
 import android.os.Handler
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.asLiveData
 import androidx.navigation.findNavController
 import com.binar.latihanchapter8.R
@@ -26,7 +25,7 @@ class SplashFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    lateinit var userManager: UserManager
+    private lateinit var userManager: UserManager
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,10 +50,10 @@ class SplashFragment : Fragment() {
         Handler().postDelayed({
             userManager.userSTATUS.asLiveData().observe(requireActivity()){
                 if (it.equals("yes")){
-                    view?.findNavController()?.navigate(R.id.action_splashFragment_to_homeFragment)
+                    view.findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
 
                 }else{
-                    view?.findNavController()?.navigate(R.id.action_splashFragment_to_login2Fragment)
+                    view.findNavController().navigate(R.id.action_splashFragment_to_login2Fragment)
 
                 }
             }

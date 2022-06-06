@@ -2,16 +2,15 @@ package com.binar.latihanchapter8.view
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.binar.latihanchapter8.R
 import com.binar.latihanchapter8.room.User
 import com.binar.latihanchapter8.room.UserDatabase
-import com.binar.latihanchapter8.viewmodel.ViewModelNotes
 import com.binar.latihanchapter8.viewmodel.ViewModelUser
 import kotlinx.android.synthetic.main.fragment_register.*
 import kotlinx.coroutines.GlobalScope
@@ -52,10 +51,10 @@ class RegisterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btnDaftar.setOnClickListener {
-            var username = editUsername1.text.toString()
-            var email = editEmail1.text.toString()
-            var password = editPassword1.text.toString()
-            var password2 = editPassword2.text.toString()
+            val username = editUsername1.text.toString()
+            val email = editEmail1.text.toString()
+            val password = editPassword1.text.toString()
+            val password2 = editPassword2.text.toString()
             if (username.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && password2.isNotEmpty()){
                 daftarUser(username, email, password, password2)
             }else{
@@ -65,10 +64,10 @@ class RegisterFragment : Fragment() {
         }
     }
 
-    fun daftarUser(username : String, email : String, password : String, password2: String){
+    private fun daftarUser(username : String, email : String, password : String, password2: String){
         val userDb = UserDatabase.getInstance(requireContext())
 
-        val viewModel = ViewModelProvider(requireActivity()).get(ViewModelUser::class.java)
+        val viewModel = ViewModelProvider(requireActivity())[ViewModelUser::class.java]
         if (password ==password2){
             GlobalScope.launch {
                 viewModel.registerLive(User(null, username, email, password))

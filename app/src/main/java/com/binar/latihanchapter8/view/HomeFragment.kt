@@ -58,7 +58,7 @@ class HomeFragment : Fragment() {
     }
     @SuppressLint("SetTextI18n", "NotifyDataSetChanged")
     private fun getFav(){
-        val viewModel = ViewModelProvider(requireActivity()).get(ViewModelNotes::class.java)
+        val viewModel = ViewModelProvider(requireActivity())[ViewModelNotes::class.java]
         viewModel.noteLiveData.observe(viewLifecycleOwner){
 
             if (it.isNotEmpty()){

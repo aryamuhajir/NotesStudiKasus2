@@ -18,8 +18,6 @@ class UserManager(context : Context) {
         val USERNAME = preferencesKey<String>("USERNAME")
         val PASSWORD = preferencesKey<String>("PASSWORD")
 
-        val EMAIL = preferencesKey<String>("EMAIL")
-        val ID = preferencesKey<Int>("ID")
         val STATUS = preferencesKey<String>("STATUS")
 
 
@@ -34,33 +32,14 @@ class UserManager(context : Context) {
     }
 
 
-    // menghapus data yang ada di datastore
-    suspend fun logout(){
-        dataStore.edit {
-            it.clear()
-        }
-    }
     //status user di datastore2 (sebagai pengecekan auth)
     suspend fun setStatus(status : String){
         dataStore2.edit {
             it[STATUS] = status
         }
     }
-    // sebagai pengakses data yang ada di datastore via livedatya
-    val userNAME : Flow<String> = dataStore.data.map {
-        it[UserManager.USERNAME] ?: ""
-    }
-    //    val userEMAIL : Flow<String> = dataStore.data.map {
-//        it[UserManager.EMAIL] ?: ""
-//    }
-//
-//    val userID : Flow<Int> = dataStore.data.map {
-//        it[UserManager.ID] ?: 0
-//    }
-    val userPASS : Flow<String> = dataStore.data.map {
-        it[UserManager.PASSWORD] ?: ""
-    }
+
     val userSTATUS : Flow<String> = dataStore2.data.map {
-        it[UserManager.STATUS] ?: "no"
+        it[STATUS] ?: "no"
     }
 }

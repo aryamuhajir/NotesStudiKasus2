@@ -45,6 +45,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
     //    library untuk livedata
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
+    //noinspection GradleDependency
     implementation "androidx.datastore:datastore-preferences:1.0.0-alpha01"
     //livedata
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"

@@ -23,7 +23,7 @@ object AppModule {
     @Provides
     @Singleton
     fun provideDBU(context: Application) : UserDatabase{
-        return  UserDatabase!!.getInstance(context)!!
+        return  UserDatabase.getInstance(context)!!
     }
 
     @Provides

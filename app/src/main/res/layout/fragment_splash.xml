@@ -9,7 +9,8 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:background="@drawable/buukup"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/ddd" />
 
 
 

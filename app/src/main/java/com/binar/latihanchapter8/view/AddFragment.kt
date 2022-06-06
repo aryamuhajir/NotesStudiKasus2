@@ -68,7 +68,7 @@ class AddFragment : Fragment() {
     }
 
     private fun tambah (judul :String, isi : String, tanggal : String){
-        val viewModel = ViewModelProvider(requireActivity()).get(ViewModelNotes::class.java)
+        val viewModel = ViewModelProvider(requireActivity())[ViewModelNotes::class.java]
 
         GlobalScope.launch {
             viewModel.insertNoteLive(

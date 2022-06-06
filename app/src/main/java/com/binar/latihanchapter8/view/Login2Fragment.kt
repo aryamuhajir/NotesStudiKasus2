@@ -1,16 +1,15 @@
 package com.binar.latihanchapter8.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.binar.latihanchapter8.R
 import com.binar.latihanchapter8.datastore.UserManager
-import com.binar.latihanchapter8.room.UserDatabase
 import com.binar.latihanchapter8.viewmodel.ViewModelUser
 import kotlinx.android.synthetic.main.fragment_login2.*
 import kotlinx.coroutines.GlobalScope
@@ -30,7 +29,7 @@ class Login2Fragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    lateinit var userManager: UserManager
+    private lateinit var userManager: UserManager
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,8 +56,8 @@ class Login2Fragment : Fragment() {
         }
 
         btnLogin.setOnClickListener {
-            var email = editUsername.text.toString()
-            var password = editPassword.text.toString()
+            val email = editUsername.text.toString()
+            val password = editPassword.text.toString()
             if (email.isNotEmpty() && password.isNotEmpty()){
                 login(email, password)
             }else{
@@ -69,8 +68,8 @@ class Login2Fragment : Fragment() {
 
 
     }
-    fun login(email : String, password : String){
-        val viewModel = ViewModelProvider(requireActivity()).get(ViewModelUser::class.java)
+    private fun login(email : String, password : String){
+        val viewModel = ViewModelProvider(requireActivity())[ViewModelUser::class.java]
 
 
             viewModel.userLiveData.observe(viewLifecycleOwner) {
@@ -91,7 +90,7 @@ class Login2Fragment : Fragment() {
         viewModel.cekLoginLive(email, password)
 
     }
-    fun loginDataStore(username : String, password : String){
+    private fun loginDataStore(username : String, password : String){
         GlobalScope.launch {
             userManager.login(username, password)
             userManager.setStatus("yes")
