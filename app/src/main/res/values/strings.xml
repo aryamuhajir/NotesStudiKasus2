@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">LatihanChapter8</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="judul_note">JUDUL NOTE</string>
+    <string name="isi_note">ISI NOTE</string>
+    <string name="tambah_note">TAMBAH NOTE</string>
+    <string name="tambah">TAMBAH</string>
+    <string name="note">NOTE</string>
+    <string name="judul">JUDUL</string>
+    <string name="tanggal">Tanggal</string>
+    <string name="ddd">ddd</string>
+    <string name="fff">fff</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

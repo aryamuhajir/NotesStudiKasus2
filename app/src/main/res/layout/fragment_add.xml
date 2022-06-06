@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    tools:context=".view.AddFragment">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/gambarB"
+        android:backgroundTint="@color/black"
+        android:background="@drawable/ic_baseline_note_add_24"
+        android:contentDescription="@string/ddd" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/txt111"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/editJudul"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/judul_note"
+                android:layout_marginTop="20dp"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="18sp"
+                android:importantForAutofill="no" />
+
+            <EditText
+                android:id="@+id/editIsi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="top"
+                android:padding="5dp"
+                android:background="#EDEDED"
+                android:hint="@string/isi_note"
+                android:inputType="textMultiLine"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="18sp"
+                android:importantForAutofill="no" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tambah_note"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:layout_below="@id/gambarB"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/txt111"
+        android:textColor="@color/black"/>
+
+
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:textSize="30sp"
+        android:id="@+id/btnTambahNote"
+        android:background="@drawable/shape_rectangle"
+        android:layout_alignParentBottom="true"
+        android:text="@string/tambah"/>
+
+
+</RelativeLayout>
